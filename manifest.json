@@ -1,0 +1,30 @@
+{
+  "name": "Replace App",
+  "description": "Finds and replaces text with the desired one",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/replace_16.png",
+      "32": "/images/replace_32.png",
+      "48": "/images/replace_48.png",
+      "128": "/images/replace_128.png"
+    }
+  },
+  "icons": {
+    "16": "/images/replace_16.png",
+    "32": "/images/replace_32.png",
+    "48": "/images/replace_48.png",
+    "128": "/images/replace_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "all_frames": true,
+      "js": ["replace.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
