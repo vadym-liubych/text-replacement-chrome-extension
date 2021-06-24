@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <script src="popup.js" defer></script>
   </head>
   <body>
-    <input type="text" name="" id="">
-    <button id="changeText">Replace</button>
-    <script src="popup.js"></script>
+    <p>Replace text:</p>
+    <form action="#" method="POST">
+      <div>
+        <label for="find">Find: </label>
+        <input type="text" id="find" placeholder="A" />
+      </div>
+      <div>
+        <label for="replace">Replace: </label>
+        <input type="text" class="text" id="replace" placeholder="B" />
+      </div>
+      <button id="btnSearch">Replace!</button>
+    </form>
   </body>
 </html>

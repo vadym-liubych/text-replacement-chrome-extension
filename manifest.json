@@ -3,7 +3,17 @@
   "description": "Finds and replaces text with the desired one",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": ["storage", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "clipboardRead",
+    "clipboardWrite"
+  ],
+  "host_permissions": ["https://www.google.com/*"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
@@ -18,13 +28,5 @@
     "32": "/images/replace_32.png",
     "48": "/images/replace_48.png",
     "128": "/images/replace_128.png"
-  },
-  "content_scripts": [
-    {
-      "matches": ["*://*/*"],
-      "all_frames": true,
-      "js": ["replace.js"],
-      "run_at": "document_end"
-    }
-  ]
+  }
 }
